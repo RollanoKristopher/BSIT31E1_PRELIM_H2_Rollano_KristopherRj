@@ -22,12 +22,15 @@ namespace ConsoleApp1
         public FileReaderResolver()
         {
             _availableReaders = new List<IFileReader>
-            {
-                new TextFileReader()
-                // TODO: Register CsvFileReader, JsonFileReader, XmlFileReader here
+{
+                 // TODO: Register CsvFileReader, JsonFileReader, XmlFileReader here
+              
+              new TextFileReader(),
+              new XmlFileReader(),
+              new JsonFileReader(),
+              new CsvFileReader()
             };
-        }
-
+           }
         /// <summary>
         /// Returns the first registered reader whose <see cref="IFileReader.SupportedFormat"/>
         /// matches the specified format string (case-insensitive).
